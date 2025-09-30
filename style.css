@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background: #000;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  /* ensures it stays above other content */
+}
+
+.navbox {
+  display: flex;
+  align-items: center;
+
+  /* vertical align */
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.logo {
+  height: 150px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+}
+
+.nav-links li {
+  position: relative;
+  /* for dropdown positioning */
+}
+
+.nav-links a {
+  color: #eef6ff;
+  text-decoration: none;
+  padding: 10px 12px;
+  display: block;
+  font-weight: 600;
+}
+
+.nav-links a:hover {
+  color: orange;
+}
+
+/* Dropdown menu */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  /* directly below the parent li */
+  left: 0;
+  background: #222;
+  min-width: 200px;
+  list-style: none;
+  padding: 6px 0;
+  border-radius: 6px;
+}
+
+.dropdown li a {
+  padding: 10px 16px;
+  color: #eef6ff;
+}
+
+.dropdown li a:hover {
+  background: orange;
+  color: #000;
+}
+
+/* Show dropdown when parent li is hovered */
+.nav-links li:hover > .dropdown {
+  display: block;
+}
+
+/* Hero-section */
+.hero {
+  margin-top: 1px;
+  width: 100%;
+  overflow-x: auto;
+  /* allows horizontal scroll */
+  scroll-behavior: smooth;
+  /* smooth scrolling */
+  white-space: nowrap;
+  /* keeps images in one row */
+}
+
+.hero-img {
+  display: flex;
+  /* places images side by side */
+}
+
+.hero-img img {
+  width: 100vw;
+  /* each image takes full screen width */
+  height: 700px;
+  /* fixed height (adjust as needed) */
+  object-fit: cover;
+  /* crops nicely instead of stretching */
+  flex-shrink: 0;
+  /* prevents images from shrinking */
+}
